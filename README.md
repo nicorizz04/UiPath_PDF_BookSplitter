@@ -9,6 +9,14 @@ An automated UiPath workflow (.NET 6 / Modern Experience) that splits dual-page 
 - **Natural sorting**: Uses LINQ Regex to keep files ordered properly (`page_1.png` through `page_10.png` instead of standard alphabetical sort).
 - **PDF rebuild**: Merges the cropped PNGs into a clean single-page PDF via `UiPath.PDF.Activities`.
 
+## Workflow & Results
+
+### Automation Architecture
+![Workflow Diagram](homeworkdirartifactsdiagrama_final-1.png)
+
+### Input Spread vs. Cropped Pages
+![Cropped Pages Sample](pages.jpg)
+
 ## Requirements
 
 - **UiPath Studio** (v2023.x / v2024.x or newer)
