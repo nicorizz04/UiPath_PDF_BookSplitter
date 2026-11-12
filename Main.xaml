@@ -1,0 +1,253 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_PdfFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_OutputFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_OutputPdfName" Type="InArgument(x:String)" />
+    <x:Property Name="in_TotalSheets" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_StartSheet" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1016,3926" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="counter" />
+      <Variable x:TypeArguments="ui:Image" Name="imgFileLeft" />
+      <Variable x:TypeArguments="ui:Image" Name="imgFileRight" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="page" />
+      <Variable x:TypeArguments="s:String[]" Name="ImageFiles" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Init Defaults" sap:VirtualizedContainerService.HintSize="488,783" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Set Default Output Folder" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_OutputFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(in_OutputFolder), "C:\Users\Ioan\Downloads\ss\", in_OutputFolder)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set Default Total Sheets" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[in_TotalSheets]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[If(in_TotalSheets = 0, 143, in_TotalSheets)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set Default Start Sheet" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[in_StartSheet]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[If(in_StartSheet = 0, 3, in_StartSheet)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set Default PDF Name" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_OutputPdfName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[If(String.IsNullOrEmpty(in_OutputPdfName), "book.pdf", in_OutputPdfName)]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Adobe Acrobat Pro Container" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2830" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Execution Loop" sap:VirtualizedContainerService.HintSize="486,2574" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Init Counter" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[in_StartSheet]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.Double]" DelayAfter="0.5" DisplayName="Navigate to Start Sheet" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Text="[counter.ToString]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="jkHD6WPZjkaxW3Nppfd1bg" DesignTimeRectangle="1888, 755, 34, 34" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='AVL_AVView' title='AVTabsContainerView' /&gt;&lt;ctrl name='Right rail' role='tool bar' /&gt;&lt;ctrl name='Go to a specific page number' role='editable text' /&gt;" Guid="8a0a657e-5b77-4a0a-9e45-05e87db76eba" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Confirm Page Jump" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,257" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5" />
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[counter &lt; in_TotalSheets]" DisplayName="While pages remain" sap:VirtualizedContainerService.HintSize="452,1836" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Crop &amp; Save Page Pair" sap:VirtualizedContainerService.HintSize="450,1714" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTakeScreenshot DelayAfter="0.5" DisplayName="Take Screenshot Left Page" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutImage="[imgFileLeft]" SaveScreenshotTo="Image" ScopeIdentifier="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Version="V5">
+                    <uix:NTakeScreenshot.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="310, 96, 1181, 912" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='graphic' /&gt;" Guid="4f6a1929-1ecc-4360-80a0-3cc4f72b9224" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.RegionOffset>
+                          <uix:RegionOffset Height="920" Width="590" X="0" Y="0" />
+                        </uix:TargetAnchorable.RegionOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTakeScreenshot.Target>
+                  </uix:NTakeScreenshot>
+                  <uix:NSaveImage DisplayName="Save Left Image" FileName="[Path.Combine(in_OutputFolder, &quot;page_&quot; + page.ToString + &quot;.png&quot;)]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="NSaveImage_1" Image="[imgFileLeft]" Version="V5" />
+                  <Assign DisplayName="Increment Page Num" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[page]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[page + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTakeScreenshot DelayAfter="0.5" DisplayName="Take Screenshot Right Page" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_2" OutImage="[imgFileRight]" SaveScreenshotTo="Image" ScopeIdentifier="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Version="V5">
+                    <uix:NTakeScreenshot.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="430, 111, 1181, 912" ElementType="Icon" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='graphic' /&gt;" Guid="2f0b2fee-aa83-4792-bffa-d75e7c081385" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.RegionOffset>
+                          <uix:RegionOffset Height="920" Width="590" X="591" Y="0" />
+                        </uix:TargetAnchorable.RegionOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTakeScreenshot.Target>
+                  </uix:NTakeScreenshot>
+                  <uix:NSaveImage DisplayName="Save Right Image" FileName="[Path.Combine(in_OutputFolder, &quot;page_&quot; + page.ToString + &quot;.png&quot;)]" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="NSaveImage_2" Image="[imgFileRight]" Version="V5" />
+                  <Assign DisplayName="Increment Page Num" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[page]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[page + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Next Page Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a090de0c-8b27-4dc6-9728-c4d01db9e9ff" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="LkqmmmLNo0O7SB0nbFqxNw" DesignTimeRectangle="1888, 859, 34, 34" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd cls='AVL_AVView' title='AVTabsContainerView' /&gt;&lt;ctrl name='Right rail' role='tool bar' /&gt;&lt;ctrl name='Next page' role='push button' /&gt;" Guid="d6806101-7562-4fd7-aff8-8fca4405a299" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <Assign DisplayName="Increment Sheet Counter" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="548, 0, 974, 1002" ContentHash="9qqWpwKjoU-9ihNLcXJMjQ" FilePath="C:\Program Files\Adobe\Acrobat DC\Acrobat\acrobat.exe" Selector="&lt;wnd app='acrobat.exe' cls='AcrobatSDIWindow' /&gt;" Version="V3" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Get Sorted Images Array" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ImageFiles]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_OutputFolder, "page_*.png").OrderBy(Function(f) CInt(System.Text.RegularExpressions.Regex.Match(f, "\d+").Value)).ToArray()]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <upap:CreatePDFFromImages IndividualResourceFileList="{x:Null}" OutputFile="{x:Null}" ResourceFileList="{x:Null}" DisplayName="Create Final PDF Document" FileList="[ImageFiles]" sap:VirtualizedContainerService.HintSize="488,115" sap2010:WorkflowViewState.IdRef="CreatePDFFromImages_1" InputMode="Collection" OutputFileName="[Path.Combine(in_OutputFolder, in_OutputPdfName)]" />
+  </Sequence>
+</Activity>
